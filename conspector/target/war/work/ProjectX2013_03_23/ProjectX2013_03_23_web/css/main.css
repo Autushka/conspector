@@ -1,0 +1,750 @@
+/*
+ * #%L
+ * ProjectX2013_03_23_web
+ * %%
+ * Copyright (C) 2013 - 2014 Powered by Sergey
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+html{
+	font-family: Calibri;	
+	font-size: 10pt;
+   overflow-y: scroll;   
+}
+
+#body{
+	font-family: Calibri;	
+	margin: auto;	
+	font-size: 12pt;	
+	background-color: silver;
+ 	background-size: cover;
+	background-repeat: no-repeat;	
+	background-attachment: fixed;
+	width: 100%;		
+}
+
+
+#header{
+	height: 5em;
+}
+
+#contentArea{
+	background-color: #F1F1F1;	
+	margin-top: 0.5em;
+	opacity: 0.95;
+	background-image: url('../img/viewBG.png');
+	min-height: 30em;	
+}
+
+#footer{
+	border-top: 1px solid white;
+	margin-top: 0.5em;
+	font-family: Calibri;
+/*	padding-top: 0.5em;*/
+	border-color: white;	
+
+   height: 1.9em;
+   clear: both;
+   padding: .2em;
+   background: linear-gradient(to right,rgba(184,0,0,1) 0,rgba(241,241,241,0) 100%);   
+}
+
+#navigationPanel{
+	height: 1.9em;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: white;
+	clear: both;
+   padding: .2em;
+   background: linear-gradient(to left,rgba(184,0,0,1) 0,rgba(241,241,241,0) 100%);   
+}
+
+#languageBtnLb{
+	float: right;
+	cursor: pointer;
+	color: #B80000;
+	font-size: 12pt;
+	margin-top: 0.5em;		
+}
+
+#contactUsLnk{
+/*	border-right: 1px solid white;*/	
+}
+
+#signInLb{
+	float: right;
+	cursor: pointer;
+	padding-right: 1.5em;
+	color: white;
+	padding-left: 1.5em;
+/*	border-left: 1px solid white;
+	border-right: 1px solid white;*/	
+	font: 12pt Calibri;	
+} 
+
+#headerLbs{
+	float: right;
+}
+
+#welcomeLb{
+	color: white;
+	font-size: 12pt;
+	float: right;
+}
+
+#feedBack{
+	font-family: Calibri;	
+	font-size: 12pt;	
+	position: fixed;
+	top: 40%;
+	color: white;
+	background-color: rgba(184,0,0,1);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	padding: 5px;
+	cursor: pointer;
+	min-width: 60px;	
+} 
+
+#spinnerBoxWrapper{
+	width: 100%;
+	height: 100%;	
+}
+
+#spinnerBoxSurroundArea{
+	width: 100%;
+	height: 100%;
+/* 	background-color: black; */
+	opacity: 0;
+	z-index: 10000;
+	position: fixed;	
+}
+
+#spinnerBox{
+/*	width: 180px;
+	height: 100px;*/
+	opacity: 0.3;	
+	background-color: black;
+	border: 1px solid black;
+	z-index: 10000;
+	margin: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;	
+}
+
+.pxLink{
+	color: #B80000;
+	font: 10pt Calibri;
+	cursor: pointer;
+	text-decoration: initial;	
+}
+
+.pxLink:hover{
+	text-decoration: underline;	
+	color: #B80000;
+}
+
+.pxInputTextField{
+/*	height: 25px !important;*/
+	width: 200px;		
+}
+
+.pxInputFileField {
+	height: 25px !important;
+	width: 200px;
+	font-family: Calibri;
+}
+
+.pxInputTextField.ng-invalid-email{
+    background-color: #FA787E;
+	border: 1px solid gray;    
+}
+
+.pxLabel{
+	font: 10pt Calibri;	
+}
+
+.pxInputLabel{
+	font: 10pt Calibri;
+	font-weight: bold;	
+}
+
+.pxRadioButtonLabel{
+	font-family: Calibri; 
+	font-size: 10pt;
+	margin-top: 0px;	
+	cursor: pointer;
+}
+
+.pxButton{
+	font: 10pt Calibri;
+	cursor: pointer;
+	min-width: 5em;
+}
+
+/*.pxSelect{
+	height: 25px !important;
+	width: 200px;
+}*/
+
+.pxRadioButton{
+	width: 20px !important;	
+	height: 30px !important;
+	outline: none !important;
+	margin: 0px 5px 0 !important;
+	float: left;
+}
+
+.pxRadioButton: focus{
+	outline: none !important;
+	outline-offset:0px !important;
+}
+
+.pxViewContent{
+	padding: 2em;	
+}
+
+.pxFormBox{
+	border: 1px solid #CCC;
+	padding: 2em;
+}
+
+.pxPopupHeader{
+	font-family: Calibri;	
+}
+
+.pxVerticalAfterSpacing{
+	display: block !important;
+ 	margin-bottom: 10px !important; 
+}
+
+.pxVerticalAfterSpacingWithoutDisplay{
+ 	margin-bottom: 10px !important; 
+}
+
+.pxDoubleVerticalAfterSpacing{
+	display: block !important;
+	margin-bottom: 20px !important;
+}
+
+.pxFieldRequiredSign{
+	color: #B80000;
+	font-weight: bold;
+	vertical-align: top;
+	font: 400 13px/1.5 DroidSansWeb,"Segoe UI","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+}
+
+.pxViewTitle{
+   font-family: Calibri;
+   font-size: 12pt;
+   padding-top: .2em;
+   padding-bottom: .2em;
+   padding-left: 1em;
+   padding-right: 1em;
+   color: black;
+   font-weight: bold;
+   border-bottom: 2px solid rgba(184,0,0,1);
+   display: inline-block;
+}
+
+.pxSubNavigationItem{
+	font-size: 12pt;
+}
+
+.pxDummy{}
+
+.mainNavigationLink{
+	float: right;
+	cursor: pointer;
+	display: inline;
+	padding-right: 1.5em;
+	font-size: 12pt;
+	color: white;
+	margin-top: 25px;
+	padding-left: 1.5em;
+	border-left: 1px solid white;	
+}
+
+.pxListTable th{
+   font-family: Calibri;
+   font-size: 10pt;  
+   text-align: left;   
+}
+
+.pxListTable td{
+   font-family: Calibri;
+   font-size: 10pt;
+   padding-right:1em;  
+}
+
+.pxTable td{
+   font-family: Calibri;
+   font-size: 10pt;
+   padding-right:0em;  
+}
+
+.pxListTable>tbody>tr>td{
+/*   padding-left: 1em;*/
+   padding-right: 1em;
+   height: 4em;
+   vertical-align: top;
+}
+
+.pxListTable .pxInputTextField{
+   width: 100%;
+}
+
+/*input, select, textarea{
+	outline: none !important;	
+	font-family: Calibri;
+	font-size: 10pt;	
+	height: 28px !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}*/
+
+.fadeInAnimation.ng-enter{
+   transition: opacity 0.5s;
+   opacity: 0;
+}
+	   
+.fadeInAnimation.ng-enter.ng-enter-active{
+   opacity: 1;
+}
+
+.fadeInAnimationForHideShow.ng-hide-add{
+  transition:0.5s linear all;
+  opacity: 1;
+  display: block !important;
+}
+
+.fadeInAnimationForHideShow.ng-hide-add-active{
+  opacity: 0;
+}
+
+.fadeInAnimationForHideShow.ng-hide-remove{
+  transition:0.5s linear all;
+  opacity: 0;
+  display: block !important;
+}
+
+.fadeInAnimationForHideShow.ng-hide-remove-active{
+  opacity: 1;
+}
+
+.footerLink{
+	cursor: pointer;
+	display: inline;
+	padding-right: 1.5em;
+	font-size: 12pt;
+	color: white;
+	padding-left: 1.5em;
+/*	border-left: 1px solid white;	*/
+}
+
+.footerLink:hover{
+	text-decoration: none;
+	color: white;
+}
+
+.footerLink:visited {
+	color:white;
+	outline: none;	
+	border: 0px;	
+}
+
+.mainNavLnk{
+	cursor: pointer;
+	display: inline;
+	padding-right: 1.5em;
+	font-size: 12pt;
+	color: white;
+	padding-left: 1.5em;
+/*	border-left: 1px solid white;*/
+	float: right;
+	outline: none;	
+}
+
+.mainNavLnk:visited {
+	color:white;
+	outline: none;	
+	border: 0px;	
+}
+
+.mainNavLnk:hover{
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+/* 	border-color: rgba(184, 0, 0, 0.8) !important; */
+/* 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(184, 0, 0, 0.6) !important; */
+/* 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(184, 0, 0, 0.6) !important; */
+/* 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(184, 0, 0, 0.6) !important;   */
+} 
+
+button:focus{
+	outline: none;
+}
+
+
+input[type="radio"], input[type="checkbox"]{
+	margin: 0px 5px 0 !important;
+	float: left;	
+	cursor: pointer;
+} 
+
+.pxDisabledInputFld{
+	background-color: initial;
+	border: 1px solid gray;
+	color: rgb(84, 84, 84);	
+}
+
+
+.pxDisabledTxtArea{
+   display: block;
+   color: gray;
+   font-family: Calibri;
+   font-size: 10pt;    
+}
+
+.pxDisabledFld{
+   display: block;
+   color: gray;
+   font-family: Calibri;
+   font-size: 10pt;  
+   margin-top: 5px;       
+}
+
+.pxSelect{
+   display: block;
+   width: 100%;
+   font-family: Calibri;
+   font-size: 10pt;   
+}
+
+/*.pxFld{
+   display: block;
+   width: 100%;
+   font-family: Calibri;
+   font-size: 10pt; 
+   height: 25px !important;        
+}*/
+
+.pxMainTE{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;
+}
+
+.pxMainHeader{
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	font-size: 0.813em;
+}/* body { */
+/* 	background-color: inherit; */
+/* } */
+
+.requiredLb{
+	color: #B80000;
+	font-weight: bold;
+	vertical-align: top;
+	font: 400 13px/1.5 DroidSansWeb,"Segoe UI","Lucida Sans Unicode",Arial,Helvetica,sans-serif;	
+}
+
+.modal{
+	overflow-y: auto;
+}
+
+.nav-tabs>li>a{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 20px;
+	border: 1px solid transparent;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+	font-family: Calibri;
+	font-size: 12pt;	
+	cursor: pointer !important;
+	color: black;
+}
+
+.nav>li>a {
+	padding: 5px 15px;
+	font-family: Calibri;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.nav-tabs>li>a:hover{
+	color: black;
+}
+
+.nav-tabs>.active>a{
+	color: #B80000;
+}
+
+.nav-tabs>.active>a:hover{
+	color: #B80000;	
+}
+
+.tab-content{
+	background-color: white;
+	min-height: 350px;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-family: Calibri;
+	font-size: 12pt;
+/*	overflow-x: scroll;	*/
+	padding: 2em;	
+}
+
+.tab-content>.active{
+	height: 100%;
+}
+
+/* .ng-table-rowselected tr { */
+/*     cursor: pointer; */
+/* } */
+
+.nav{
+	margin-bottom: 0px;
+}
+
+ul, ol{
+	margin-bottom: 0px;	
+}
+
+a{
+	color: #B80000;
+	font: 10pt Calibri;
+	cursor: pointer;
+	text-decoration: initial;	
+}
+
+a:hover{
+	color: #B80000;	
+	text-decoration: none;
+}
+
+.ta-editor{
+	min-height: 5em;
+	border: 1px #ccc solid;	
+	outline: none;
+	font-family: Calibri;
+	font-size: 12pt;
+	padding: 1em;			
+}
+
+.container {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+label{
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 0;
+	border-radius: 4px;
+}
+
+.pagination>li {
+	display: inline;
+}
+
+.pagination>li>a, .pagination>li>span {
+	line-height: 1.428571429;
+}
+
+.pagination>li>a, .pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 2px 7px;
+	margin-left: -1px;
+	line-height: 1.428571429;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.pagination>.disabled>span, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
+	color: #999;
+	cursor: not-allowed;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.accordion-heading .accordion-toggle {
+	display: block;
+	padding: 1em 2em;
+	font-size: 12pt;
+	font-weight: bold;
+	color: black;
+}
+
+.accordion-inner {
+	padding: 1em 2em;
+	border-top: 1px solid #e5e5e5;
+}
+
+.btn-xs{
+	padding: 1px 5px;
+}
+
+em{
+	font-style: normal;
+}
+
+.disabledLink{
+	pointer-events: none;
+    cursor: default;
+}
+
+.onLineStatus{
+	background-color: #90e879 !important;
+}
+
+
+.cnpTransparent{
+	opacity: 0;
+}
+
+.cnpNotTransparent{
+	opacity: 1 !important;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #1590be;
+  float: left;
+  margin-top: 7px;
+  opacity: 0;  
+}
+
+.cnpSubHeaderTable td{
+	vertical-align: top;
+	padding: 0.2em 2em 0.2em 2em;
+	border-right: 1px #c4cad1 solid;
+}
+
+.cnpSubHeaderTable tr > td:first-of-type{
+	padding-left: 0px;
+}
+
+.cnpSubHeaderTable tr > td:last-of-type{
+	border-right: 0px;
+}
+
+.cnpVerticalAfterSpacingX1{
+ 	margin-bottom: 0.5em; 	
+}
+
+.cnpVerticalAfterSpacingX4{
+ 	margin-bottom: 2em; 	
+}
+
+.cnpVerticalBeforeSpacingX2{
+ 	margin-top: 1em; 
+}
+
+.cnpVerticalBeforeSpacingX4{
+ 	margin-top: 2em; 
+}
+
+.cnpHorizontalAfterSpacingX1{
+ 	margin-right: 0.5em; 
+}
+
+.cnpLink{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.750em;	
+	color: #1590be;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.cnpLink:hover{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.750em;	
+	text-decoration: none;
+	color: #858d99;
+}
+
+.tab-content input,
+.tab-content select,
+.pxFld,
+.quickdate-button,
+.quickdate-button:hover {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #9ca0a6;
+	-weblit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: none;
+
+/*	line-height: 40px;*/
+
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.750em;	
+	padding: 10px;	
+}
+
+input[type="file"] {
+	line-height: initial !important; 
+	border: 0px;
+}
+
+input[type="button"]{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;		
+}
+
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+	outline: 0px;
+}
+
+.ui-match {
+	background: yellow;
+}
+
