@@ -10,12 +10,6 @@
 	border-style:solid;
 }
 
-#signInLb{
-	font-weight:bold;
-	font: 13pt arial;
-}
-
-
 .mainNavLnk {
 	cursor: pointer;
 	display: inline;

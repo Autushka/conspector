@@ -11,6 +11,7 @@ viewControllers.controller('appView', function($scope, $rootScope, $filter, $res
 	$scope.settingsTE = jQuery.i18n.prop('appView.settingsTE');
 	$scope.unitsTE = jQuery.i18n.prop('appView.unitsTE');
 	$scope.welcomeMessageTE = jQuery.i18n.prop('appView.welcomeMessageTE', $scope.globalData.userName);
+	$scope.projectsAndPhasesSelectionTE = jQuery.i18n.prop('appView.projectsAndPhasesSelectionTE', $scope.globalData.userName);
 
 	$scope.aMainNavigationLinks = [];
 

@@ -25,6 +25,10 @@ ul {
 	margin: auto;	
 	background-color: #354052; 
 	background-image: none;
+	font-size: 12pt;	
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-attachment: fixed;
 	font-family: 'Ubuntu', sans-serif;	
 	color: #323544;		
 }
@@ -47,7 +51,9 @@ ul {
 }
 /* HEADER */
 #header {
-	height: 130px;
+	height: 100px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -62,8 +68,22 @@ ul {
 #logo td {
 	vertical-align: middle;
 }
+
+#headerLogo{
+	width: 60%;
+}
+
+#projectSelection {
+	float: left;
+	width: auto;
+	margin-left: 5rem;
+
+}
+
 #headerLbs {
-	margin-top: 38px;
+	width: auto;
+	float: right;
+
 }
 #welcomeLb,
 #languageBtnLb,
@@ -72,7 +92,11 @@ ul {
 	font-size: 0.813em; /* 13px */
 	font-weight: 700;
 	color: #323544;
+	float: right;
+	cursor: pointer;
 }
+
+
 #welcomeLb {
 	margin-top: 5px;
 }
@@ -81,7 +105,7 @@ ul {
 	height: 30px;
 	padding-top: 6px;
 	margin-top: 0;
-	margin-bottom: 18px;
+	margin-bottom: 10px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
@@ -1643,7 +1667,6 @@ div.login input {
 	box-sizing: border-box;
 	box-shadow: none;
 
-/*	line-height: 40px;*/
 	line-height: 18px;
 	font-size: 13px;
 }
@@ -1692,6 +1715,10 @@ div.login .pxInputTextField:-ms-input-placeholder { /* IE10+ */
 	font-weight: 700;
 	color: #858d99;
 	opacity: 1;
+}
+.pxVerticalAfterSpacing{
+	display: block !important;
+ 	margin-bottom: 10px !important; 
 }
 
 /* DROPDOWN MENU */
