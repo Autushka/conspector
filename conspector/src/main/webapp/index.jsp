@@ -25,8 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="css/thirdParty/ng-quick-date-default-theme.css" />
 	<link rel="stylesheet" type="text/css" href="css/thirdParty/angular-multi-select.css" />	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<link rel="stylesheet" type="text/css" href="css/photoGallery.css" />
-	<link rel="stylesheet" type="text/css" href="css/spinner.css" />
+<!-- 	<link rel="stylesheet" type="text/css" href="css/photoGallery.css" /> -->
 	<link rel="stylesheet" type="text/css" href="apps/conspector/css/app.css" />
 	<link rel="stylesheet" type="text/css" href="apps/conspector/css/style.css" />		
 		
