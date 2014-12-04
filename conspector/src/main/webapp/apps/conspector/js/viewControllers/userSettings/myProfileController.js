@@ -1,26 +1,29 @@
-/*
- * #%L
- * ProjectX2013_03_23_web
- * %%
- * Copyright (C) 2013 - 2014 Powered by Sergey
- * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * #L%
- */
 viewControllers.controller('myProfileView', function($scope, $rootScope, dataSrv, globalSrv, $window, $timeout) {
-	$rootScope.viewTitleTE = jQuery.i18n.prop('userSettingsView.changeProfileSubviewTitleTE');
-	$rootScope.viewTitleTECode = 'userSettingsView.changeProfileSubviewTitleTE';
+	$scope.viewTitleTE = jQuery.i18n.prop('myProfileView.viewTitleTE');
+	$scope.saveTE = jQuery.i18n.prop('myProfileView.saveTE');
+	$scope.userNameTE = jQuery.i18n.prop('myProfileView.userNameTE');
+	$scope.emailTE = jQuery.i18n.prop('myProfileView.emailTE');
+	$scope.communicationLnTE = jQuery.i18n.prop('myProfileView.communicationLnTE');
 	
+
+	// $scope.oldPasswordTE = jQuery.i18n.prop('changePasswordView.oldPasswordTE');
+	// $scope.newPasswordTE = jQuery.i18n.prop('changePasswordView.newPasswordTE');
+	// $scope.confirmNewPasswordTE = jQuery.i18n.prop('changePasswordView.confirmNewPasswordTE');
+	// $scope.cancelTE = jQuery.i18n.prop('global.cancelTE');
+
+	// $scope.localAvatarTE = jQuery.i18n.prop('myProfileView.localAvatarTE');
+	// $scope.gravatarTE = jQuery.i18n.prop('myProfileView.gravatarTE');
+	// $scope.userNameTE = jQuery.i18n.prop('myProfileView.userNameTE');
+	
+	// $scope.viewTitleTE = jQuery.i18n.prop('changePasswordView.viewTitleTE');
+	// $scope.oldPasswordTE = jQuery.i18n.prop('changePasswordView.oldPasswordTE');
+	// $scope.newPasswordTE = jQuery.i18n.prop('changePasswordView.newPasswordTE');
+	// $scope.confirmNewPasswordTE = jQuery.i18n.prop('changePasswordView.confirmNewPasswordTE');
+	
+
+	// $scope.changeGravatarTE = jQuery.i18n.prop('myProfileView.changeGravatarTE');
+	// $scope.selectAvatarTE = jQuery.i18n.prop('myProfileView.selectAvatarTE');
+
 	$scope.avatarType = "gravatar";
 	$scope.isSelectAvatarOptionHidden = true;
 	$scope.avatarPath = "";

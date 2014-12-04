@@ -2,22 +2,8 @@ viewControllers.controller('userSettingsView', function($scope, $rootScope, data
 	$scope.changeProfileTE = jQuery.i18n.prop('userSettingsView.changeProfileTE');
 	$scope.changePasswordTE = jQuery.i18n.prop('userSettingsView.changePasswordTE');
 
-	$scope.oldPasswordTE = jQuery.i18n.prop('changePasswordView.oldPasswordTE');
-	$scope.newPasswordTE = jQuery.i18n.prop('changePasswordView.newPasswordTE');
-	$scope.confirmNewPasswordTE = jQuery.i18n.prop('changePasswordView.confirmNewPasswordTE');
-	$scope.saveTE = jQuery.i18n.prop('global.saveTE');
-	$scope.cancelTE = jQuery.i18n.prop('global.cancelTE');
-
-	$scope.localAvatarTE = jQuery.i18n.prop('myProfileView.localAvatarTE');
-	$scope.gravatarTE = jQuery.i18n.prop('myProfileView.gravatarTE');
-	$scope.userNameTE = jQuery.i18n.prop('myProfileView.userNameTE');
-	$scope.emailTE = jQuery.i18n.prop('myProfileView.emailTE');
-	$scope.communicationLnTE = jQuery.i18n.prop('myProfileView.communicationLnTE');
-	$scope.changeGravatarTE = jQuery.i18n.prop('myProfileView.changeGravatarTE');
-	$scope.selectAvatarTE = jQuery.i18n.prop('myProfileView.selectAvatarTE');
-
-	$scope.limitDisplayedValuesTE = "Limit displayed values";	
 	$scope.communicationLns = [{}, {}];	
+	
 	$scope.communicationLns[0].description = jQuery.i18n.prop('global.englishTE');
 	$scope.communicationLns[1].description = jQuery.i18n.prop('global.frenchTE');
 
