@@ -54,14 +54,21 @@
 	<script src="apps/conspector/js/thirdParty/jquery.cookie.js"></script>	
 	
 	<script src="js/controls.js"></script>
-	<script src="js/constants.js"></script> 
+
 	<script src="apps/conspector/js/viewControllers.js"></script>		
 	<script src="apps/conspector/js/main.js"></script>
 	<script src="js/services.js"></script>	
 	<script src="apps/conspector/js/menus.js"></script>
+	
 	<script src="apps/conspector/js/constants.js"></script>
+	<script src="apps/conspector/js/types.js"></script>
+	<script src="apps/conspector/js/cashProvider.js"></script>
+	<script src="apps/conspector/js/utilsProvider.js"></script>
+	<script src="apps/conspector/js/dataProvider.js"></script>	
+	<script src="apps/conspector/js/apiProvider.js"></script>				
+		
 	<script src="apps/conspector/js/customServices.js"></script>	
-	<script src="js/mainController.js"></script> 
+	<script src="apps/conspector/js/mainController.js"></script> 
 	<script src="apps/conspector/js/viewControllers/appController.js"></script>		
 		
 	<script src="apps/conspector/js/viewControllers/userManagement/signInController.js"></script>

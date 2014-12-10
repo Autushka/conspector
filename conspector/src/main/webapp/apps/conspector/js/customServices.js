@@ -3,17 +3,25 @@ app.factory('genericODataSrv', function($resource) {
 	if (window.location.host.substr(0, 9) === "localhost") {
 		odataUrl = CONSTANTS.appODataServicesPath;
 	} else {
-		odataUrl = "odata/";
+		odataUrl = "DeficienciesManagement.svc/";
 	}
 
 	return $resource("", {}, {
-		'getEntitySetWithFilter': {
+		'getEntitySetWithFilterAndExpand': {
 			method: "GET",
 			url: odataUrl + ":path" + '?$filter=' + ":filter" + '&$expand=' + ":expand" + '&$format=json'
 		},
-		'getEntitySet': {
+		'getEntitySetWithFilter': {
+			method: "GET",
+			url: odataUrl + ":path" + '?$filter=' + ":filter" + '&$format=json'
+		},	
+		'getEntitySetWithExpand': {
 			method: "GET",
 			url: odataUrl + ":path" + '?$expand=' + ":expand" + '&$format=json'
+		},			
+		'getEntitySet': {
+			method: "GET",
+			url: odataUrl + ":path" + '?$format=json'
 		},
 		'post': {
 			method: "POST",
@@ -97,18 +105,30 @@ app.factory('customSrv', function($http, $q, $rootScope, $modal, dataSrv, global
 				$rootScope.$emit('LOAD');
 			}
 
-			if (oParameters.filter) {
-				oOdataSrv = (new genericODataSrv()).$getEntitySetWithFilter({
+			if (oParameters.filter && oParameters.expand) {
+				oOdataSrv = (new genericODataSrv()).$getEntitySetWithFilterAndExpand({
 					path: oParameters.path,
 					expand: oParameters.expand,
 					filter: oParameters.filter
 				});
-			} else {
-				oOdataSrv = (new genericODataSrv()).$getEntitySet({
+			} 
+			if (oParameters.filter && !oParameters.expand) {
+				oOdataSrv = (new genericODataSrv()).$getEntitySetWithFilter({
+					path: oParameters.path,
+					filter: oParameters.filter
+				});
+			} 
+			if (!oParameters.filter && oParameters.expand) {
+				oOdataSrv = (new genericODataSrv()).$getEntitySetWithExpand({
 					path: oParameters.path,
 					expand: oParameters.expand,
 				});
-			}
+			} 	
+			if (!oParameters.filter && !oParameters.expand) {
+				oOdataSrv = (new genericODataSrv()).$getEntitySet({
+					path: oParameters.path,
+				});
+			}					
 
 			oOdataSrv.then(function(oData) {
 				$rootScope.$emit('UNLOAD');
@@ -491,8 +511,9 @@ app.factory('customSrv', function($http, $q, $rootScope, $modal, dataSrv, global
 			var sFilter = this.constractFilterBasedOnMultipleSelect({
 				aArray: $rootScope.oGlobalSelections.aProjects,
 				sArrayKey: "rowId",
-				sFilterKey: "versionId",
-				bIsFirstFilter: true
+				sFilterKey: "VersionId",
+				bIsFirstFilter: true,
+				bIsString: false
 			});
 			return sFilter;
 		},
@@ -508,9 +529,19 @@ app.factory('customSrv', function($http, $q, $rootScope, $modal, dataSrv, global
 						} else {
 							sFilter = " and (";
 						}
-						sFilter = sFilter + oParameters.sFilterKey + " eq '" + oParameters.aArray[i][oParameters.sArrayKey] + "'";
+						if(oParameters.bIsString){
+							sFilter = sFilter + oParameters.sFilterKey + " eq '" + oParameters.aArray[i][oParameters.sArrayKey] + "'";
+						}else{
+							sFilter = sFilter + oParameters.sFilterKey + " eq " + oParameters.aArray[i][oParameters.sArrayKey] + "";
+						}
+						
 					} else {
-						sFilter = sFilter + " or " + oParameters.sFilterKey + " eq '" + oParameters.aArray[i][oParameters.sArrayKey] + "'";
+						if(oParameters.bIsString){
+							sFilter = sFilter + " or " + oParameters.sFilterKey + " eq '" + oParameters.aArray[i][oParameters.sArrayKey] + "'";
+						}else{
+							sFilter = sFilter + " or " + oParameters.sFilterKey + " eq " + oParameters.aArray[i][oParameters.sArrayKey] + "";
+						}						
+						
 					}
 				}
 			}
@@ -794,9 +825,9 @@ app.factory('customSrv', function($http, $q, $rootScope, $modal, dataSrv, global
 		getProjectsAndPhasesForGlobalSelection: function() {
 			this.getEntitySet({
 				oReadServiceParameters: {
-					path: "Version",
+					path: "Versions",
 					filter: "",
-					expand: "project",
+					expand: "ProjectDetails",
 					showSpinner: false
 				},
 				oServiceProvider: this,
@@ -812,33 +843,33 @@ app.factory('customSrv', function($http, $q, $rootScope, $modal, dataSrv, global
 					for (var i = 0; i < aData.length; i++) {
 						if (i === 0) {
 							$rootScope.oGlobalSelections.aProjects.push({
-								name: '<strong>' + aData[i].project.name + '</strong>',
+								name: '<strong>' + aData[i].ProjectDetails.Name + '</strong>',
 								multiSelectGroup: true
 							});
 
 							$rootScope.oGlobalSelections.aProjects.push({
-								parentName: aData[i].project.name,
-								parentId: aData[i].project.rowId,
-								name: aData[i].name,
-								rowId: aData[i].rowId,
+								parentName: aData[i].ProjectDetails.Name,
+								parentId: aData[i].ProjectDetails.RowId,
+								name: aData[i].Name,
+								rowId: aData[i].RowId,
 								ticked: true
 							});
 						} else {
 							if ($rootScope.oGlobalSelections.aProjects.length > 1) {
-								if ($rootScope.oGlobalSelections.aProjects[$rootScope.oGlobalSelections.aProjects.length - 1].parentId !== aData[i].project.rowId) {
+								if ($rootScope.oGlobalSelections.aProjects[$rootScope.oGlobalSelections.aProjects.length - 1].parentId !== aData[i].Project.RowId) {
 									$rootScope.oGlobalSelections.aProjects.push({
 										multiSelectGroup: false
 									});
 									$rootScope.oGlobalSelections.aProjects.push({
-										name: '<strong>' + aData[i].project.name + '</strong>',
+										name: '<strong>' + aData[i].ProjectDetails.Name + '</strong>',
 										multiSelectGroup: true
 									});
 								}
 								$rootScope.oGlobalSelections.aProjects.push({
-									parentName: aData[i].project.name,
-									parentId: aData[i].project.rowId,
-									name: aData[i].name,
-									rowId: aData[i].rowId,
+									parentName: aData[i].ProjectDetails.Name,
+									parentId: aData[i].ProjectDetails.RowId,
+									name: aData[i].Name,
+									rowId: aData[i].RowId,
 									ticked: true
 								});
 							}

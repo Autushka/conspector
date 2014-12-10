@@ -1,35 +1,9 @@
-//$.getScript("apps/conspector/js/viewControllers.js");
-//
-//$.getScript("apps/conspector/js/viewControllers/deficiencies/deficienciesController.js");
-//$.getScript("apps/conspector/js/viewControllers/deficiencies/deficienciesListController.js");		
-//$.getScript("apps/conspector/js/viewControllers/deficiencies/deficiencyDetailsController.js");
-//$.getScript("apps/conspector/js/viewControllers/deficiencies/deficienciesListPrintFormController.js");
-//$.getScript("apps/conspector/js/viewControllers/popUps/notSavedDataPopUpController.js");
-//
-//$.getScript("apps/conspector/js/viewControllers/units/unitsController.js");
-//$.getScript("apps/conspector/js/viewControllers/units/unitsListController.js");		
-//$.getScript("apps/conspector/js/viewControllers/units/unitDetailsController.js");
-//
-//$.getScript("apps/conspector/js/viewControllers/accounts/accountsController.js");
-//$.getScript("apps/conspector/js/viewControllers/accounts/accountsListController.js");		
-//$.getScript("apps/conspector/js/viewControllers/accounts/accountDetailsController.js");	
-//
-//$.getScript("apps/conspector/js/viewControllers/adminArea/projectsController.js");
-//$.getScript("apps/conspector/js/viewControllers/adminArea/phasesController.js");
-//$.getScript("apps/conspector/js/viewControllers/adminArea/categoriesController.js");
-//$.getScript("apps/conspector/js/viewControllers/adminArea/statusesController.js");
-//$.getScript("apps/conspector/js/viewControllers/adminArea/prioritiesController.js");
-//$.getScript("apps/conspector/js/viewControllers/adminArea/accountTypesController.js");	
-//	
-//$.getScript("apps/conspector/js/viewControllers/clientFormController.js");						
-//$.getScript("apps/conspector/js/viewControllers/appController.js");
-
 var MENUS = (function($) {
 	var menus = {
 		navigation : {
 			aMainNavigationLinks : []
 		},
-		initialViews : []
+		oInitialViews : {}
 	};
 	menus.navigation.aMainNavigationLinks.push({
 		role : "",
@@ -97,32 +71,36 @@ var MENUS = (function($) {
 //			hash: "#/app/userSettings"	
 		}]
 	});
-
-	menus.initialViews.push({
-		role : "",
-		initialView : "#/signIn"
-	});
-	menus.initialViews.push({
-		role : "user",
-		initialView : "#/app/deficienciesList"
-	});
-	menus.initialViews.push({
-		role : "test",
-		initialView : "#/template/"
-	});
-	menus.initialViews.push({
-		role : "technicalAdministrator",
-		initialView : "#/app/deficienciesList"
-	});
 	
-	menus.initialViews.push({
-		role : "endUser",
-		initialView : "#/app/deficienciesListEndUser"
-	});	
+	menus.oInitialViews.systemAdministrator = "#/app/deficienciesList";
+	
+	
+
+//	menus.initialViews.push({
+//		role : "",
+//		initialView : "#/signIn"
+//	});
+//	menus.initialViews.push({
+//		role : "user",
+//		initialView : "#/app/deficienciesList"
+//	});
+//	menus.initialViews.push({
+//		role : "test",
+//		initialView : "#/template/"
+//	});
+//	menus.initialViews.push({
+//		role : "technicalAdministrator",
+//		initialView : "#/app/deficienciesList"
+//	});
+//	
+//	menus.initialViews.push({
+//		role : "endUser",
+//		initialView : "#/app/deficienciesListEndUser"
+//	});	
 
 	menus.newUserInitialRole = "user";
 
-	menus.appRoles = [ "user", "technicalAdministrator", "endUser" ];
+//	menus.appRoles = [ "user", "technicalAdministrator", "endUser" ];
 
 	return menus;
 }(jQuery));

@@ -1,11 +1,18 @@
-// Place to add app specific constants
-CONSTANTS.isDataFake = false;
+var CONSTANTS = (function ($) {
+	var constants = {};
+	constants.messageDisplayTime = 5000;
+	constants.messageDisplayLayout = 'topCenter';
+	constants.currentProject = 'conspector';
+	//constants.isDataFake = false;
+	constants.appPathname = "";
+	constants.sServicePath = "odata.svc/";
+	//constants.deficiencyTagLabelType = "0";
+	//constants.deficiencyLocationLabelType = "1";
+	//constants.accountTagLabelType = "2";	
+	return constants;
+}(jQuery));
 
-CONSTANTS.areDeficiencyEntitiesFake = true;
-CONSTANTS.appPathname = "";
 
-CONSTANTS.appODataServicesPath = "odata/";
 
-CONSTANTS.deficiencyTagLabelType = "0";
-CONSTANTS.deficiencyLocationLabelType = "1";
-CONSTANTS.accountTagLabelType = "2";
+
+

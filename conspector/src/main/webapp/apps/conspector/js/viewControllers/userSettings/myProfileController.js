@@ -35,10 +35,10 @@ viewControllers.controller('myProfileView', function($scope, $rootScope, dataSrv
 			$scope.oProfileData = aData[0];
 			$scope.sProfileAvatarURL = CryptoJS.MD5($scope.oProfileData.email).toString();
 
-			if ($scope.oProfileData.avatarFileId) {
+			if ($scope.oProfileData.avatarFileGuid) {
 				$scope.avatarType = "local";
 				$scope.avatarPath = $window.location.origin + $window.location.pathname + "rest/file/get/";
-				$rootScope.selectedPhotoID = $scope.oProfileData.avatarFileId;
+				$rootScope.selectedPhotoID = $scope.oProfileData.avatarFileGuid;
 			} else {
 				$scope.avatarType = "gravatar";
 				$scope.avatarPath = "img/noAvatar.jpg";
@@ -106,17 +106,17 @@ viewControllers.controller('myProfileView', function($scope, $rootScope, dataSrv
 //				$scope.file = undefined;
 //				var oGetProfileAvatar = dataSrv.httpRequest($scope.sUrl, {});
 //				oGetProfileAvatar.then(function(aData) {
-//					oProfileDataForCommit.avatarFileId = aData[aData.length - 1].rowId;
+//					oProfileDataForCommit.avatarFileGuid = aData[aData.length - 1].rowId;
 //
 //					$scope.avatarPath = $window.location.origin + $window.location.pathname + "rest/file/get/";
-//					$rootScope.selectedPhotoID = oProfileDataForCommit.avatarFileId;
+//					$rootScope.selectedPhotoID = oProfileDataForCommit.avatarFileGuid;
 //					saveProfileData();
 //				});
 //			});
 //		} else {
-//			oProfileDataForCommit.avatarFileId = $rootScope.selectedPhotoID;
+//			oProfileDataForCommit.avatarFileGuid = $rootScope.selectedPhotoID;
 //			if ($scope.avatarType === "gravatar") {
-//				oProfileDataForCommit.avatarFileId = 0;
+//				oProfileDataForCommit.avatarFileGuid = 0;
 //				$scope.avatarPath = "";
 //				$rootScope.selectedPhotoID = "img/noAvatar.jpg";
 //			}

@@ -106,20 +106,22 @@ viewControllers.controller('appView', function($scope, $rootScope, $filter, $res
 	};
 
 	$rootScope.onLogOut = customSrv.onLogOut;
-	$rootScope.oGlobalSelections = {
-		aProjects: []
-	};
-	
-	if (customSrv.getJsonCookie("globalSelections") && customSrv.getJsonCookie("globalSelections").aProjects && customSrv.getJsonCookie("globalSelections").aProjects.length) {
-		angular.copy(customSrv.getJsonCookie("globalSelections"), $rootScope.oGlobalSelections);
-	} else {
-		customSrv.getProjectsAndPhasesForGlobalSelection();
-	}
 
-	$rootScope.onSelectProjects = function() {
-		customSrv.setCookieFromJson("globalSelections", {
-			aProjects: $rootScope.oGlobalSelections.aProjects
-		});
-		$rootScope.$emit('globalSelectionsChanged');
-	};
+	
+	// $rootScope.oGlobalSelections = {
+	// 	aProjects: []
+	// };
+	
+	// if (customSrv.getJsonCookie("globalSelections") && customSrv.getJsonCookie("globalSelections").aProjects && customSrv.getJsonCookie("globalSelections").aProjects.length) {
+	// 	angular.copy(customSrv.getJsonCookie("globalSelections"), $rootScope.oGlobalSelections);
+	// } else {
+	// 	customSrv.getProjectsAndPhasesForGlobalSelection();
+	// }
+
+	// $rootScope.onSelectProjects = function() {
+	// 	customSrv.setCookieFromJson("globalSelections", {
+	// 		aProjects: $rootScope.oGlobalSelections.aProjects
+	// 	});
+	// 	$rootScope.$emit('globalSelectionsChanged');
+	// };
 });

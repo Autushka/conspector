@@ -8,12 +8,12 @@ viewControllers.controller('emailActivationView', function($scope, $rootScope, d
 	$rootScope.viewTitleTE = jQuery.i18n.prop('emailActivationView.viewTitleTE');
 	$rootScope.viewTitleTECode = 'emailActivationView.viewTitleTE';
 	
-	$scope.eMailVerCode = $stateParams.ev;	
+	$scope.eMailVerificationCode = $stateParams.ev;	
 	
 	$scope.showSuccessNotification = false;
 	$scope.showProblemNotification = false;
 	
-	var oEmailActivationSrv = dataSrv.httpRequest("jsp/account/eMailVerify.jsp", {eMailVerCode: $scope.eMailVerCode}, "POST", true);
+	var oEmailActivationSrv = dataSrv.httpRequest("jsp/account/eMailVerify.jsp", {eMailVerificationCode: $scope.eMailVerificationCode}, "POST", true);
 	oEmailActivationSrv.then(function(oData) {
 		if(oData.messages.length > 0){
 			$scope.showSuccessNotification = true;			
