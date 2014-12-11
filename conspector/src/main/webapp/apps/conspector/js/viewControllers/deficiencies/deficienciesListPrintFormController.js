@@ -32,11 +32,14 @@ viewControllers.controller('deficienciesListPrintFormView', function($scope, $sc
 		var sUrl = "rest/file/list/settings/settings/_logo_";
 		var oGetLogoUrl = dataSrv.httpRequest(sUrl, {});
 		oGetLogoUrl.then(function(aData) {
-			$scope.sLogoUrl = $window.location.origin + $window.location.pathname + "rest/file/get/" + aData[0].rowId;
+			if(aData[0]){
+				$scope.sLogoUrl = $window.location.origin + $window.location.pathname + "rest/file/get/" + aData[0].rowId;
+			}
+			else{
+				$scope.sLogoUrl = $window.location.origin + $window.location.pathname + "img/logo_conspector.png";
+			}
 		});
 	};
-
-	$scope.constructLogoUrl();		
-	
+	$scope.constructLogoUrl();
 
 });
