@@ -50,6 +50,7 @@
 	<script src="js/thirdParty/bootstrap-colorpicker-module.js"></script>    
 	<script src="js/thirdParty/textAngular.min.js"></script>
 	<script src="js/thirdParty/angular-multi-select.js"></script>
+	<script src="js/thirdParty/angular-translate.min.js"></script>	
 	
 	<script src="apps/conspector/js/thirdParty/jquery.cookie.js"></script>	
 	
@@ -65,7 +66,8 @@
 	<script src="apps/conspector/js/cashProvider.js"></script>
 	<script src="apps/conspector/js/utilsProvider.js"></script>
 	<script src="apps/conspector/js/dataProvider.js"></script>	
-	<script src="apps/conspector/js/apiProvider.js"></script>				
+	<script src="apps/conspector/js/apiProvider.js"></script>
+	<script src="apps/conspector/js/translateProvider.js"></script>					
 		
 	<script src="apps/conspector/js/customServices.js"></script>	
 	<script src="apps/conspector/js/mainController.js"></script> 

@@ -1,4 +1,4 @@
-var app = angular.module('projectX', ['customControls', 'ui.router', 'viewControllers', 'ui.bootstrap', 'textAngular', 'ngResource', 'colorpicker.module', 'ngTagsInput', 'ngQuickDate', 'ui.highlight', 'multi-select', 'ngTable', 'angularFileUpload'])
+var app = angular.module('projectX', ['customControls', 'ui.router', 'viewControllers', 'ui.bootstrap', 'textAngular', 'ngResource', 'colorpicker.module', 'ngTagsInput', 'ngQuickDate', 'ui.highlight', 'multi-select', 'ngTable', 'angularFileUpload', 'pascalprecht.translate'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 	
