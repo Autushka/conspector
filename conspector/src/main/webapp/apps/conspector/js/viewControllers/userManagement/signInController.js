@@ -92,4 +92,8 @@ viewControllers.controller('signInView', function($scope, $state, $rootScope, da
 	$scope.onSignInClick = function() {
 		this.login();
 	};
+
+	$scope.onSwitchLanguage = function(){
+		utilsProvider.switchLanguage();
+	};
 });

@@ -1,5 +1,14 @@
 app.config(function ($translateProvider) {
   $translateProvider.translations('en', {
+  	  //signIn
+  	  signIn_userName: 'Username',
+  	  signIn_password: 'Password',
+  	  signIn_logIn: 'Log In',
+  	  signIn_languageCode: 'EN',
+  	  signIn_forgotPassword: 'Forgot your password?'
+
+
+
 //    TITLE: 'Hello',
 //    FOO: 'This is a paragraph.',
 //    BUTTON_LANG_EN: 'english',
@@ -7,6 +16,12 @@ app.config(function ($translateProvider) {
   });
   
   $translateProvider.translations('fr', {
+   	  //signIn
+  	  signIn_userName: 'Utiisateur',
+  	  signIn_password: 'Mot de pass',
+  	  signIn_logIn: 'Connection',
+  	  signIn_languageCode: 'FR',
+  	  signIn_forgotPassword: 'Mot de passe oubli\u00E9?' 	
 //    TITLE: 'Hallo',
 //    FOO: 'Dies ist ein Paragraph.',
 //    BUTTON_LANG_EN: 'englisch',

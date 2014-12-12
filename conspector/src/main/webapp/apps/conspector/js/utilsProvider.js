@@ -1,4 +1,4 @@
-app.factory('utilsProvider', function(ngTableParams) {
+app.factory('utilsProvider', function(ngTableParams, $translate) {
 	return {
 
 		setCookieFromJson: function(sKey, oObj) {
@@ -14,6 +14,18 @@ app.factory('utilsProvider', function(ngTableParams) {
 
 		removeCookie: function(sKey) {
 			$.removeCookie(sKey);
+		},
+
+		switchLanguage: function(){
+			var sCurrentLanguageKey = $translate.use();
+			switch (sCurrentLanguageKey){
+				case 'en':
+					$translate.use('fr');
+					break;
+				case 'fr':
+					$translate.use('en');
+					break;					
+			}
 		},
 
 		convertJsonArrayToString: function(aObj) {

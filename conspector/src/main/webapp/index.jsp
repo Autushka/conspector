@@ -2,6 +2,7 @@
 <html style="height:98%;" ng-app="projectX">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="apps/conspector/img/favicon.ico">	
 	
 	<!-- google analytics	 -->
@@ -51,6 +52,10 @@
 	<script src="js/thirdParty/textAngular.min.js"></script>
 	<script src="js/thirdParty/angular-multi-select.js"></script>
 	<script src="js/thirdParty/angular-translate.min.js"></script>	
+	<script src="js/thirdParty/angular-cookies.min.js"></script>	
+	<script src="js/thirdParty/angular-translate-storage-cookie.min.js"></script>		
+	
+	
 	
 	<script src="apps/conspector/js/thirdParty/jquery.cookie.js"></script>	
 	
@@ -67,7 +72,10 @@
 	<script src="apps/conspector/js/utilsProvider.js"></script>
 	<script src="apps/conspector/js/dataProvider.js"></script>	
 	<script src="apps/conspector/js/apiProvider.js"></script>
-	<script src="apps/conspector/js/translateProvider.js"></script>					
+	<script src="apps/conspector/js/translateProvider.js"></script>	
+	
+	
+					
 		
 	<script src="apps/conspector/js/customServices.js"></script>	
 	<script src="apps/conspector/js/mainController.js"></script> 
