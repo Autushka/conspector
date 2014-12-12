@@ -9,7 +9,8 @@ viewControllers.controller('deficienciesListPrintFormView', function($scope, $sc
     $scope.noteTE = jQuery.i18n.prop('deficienciesListPrintFormView.noteTE');
    	$scope.imagesTE = jQuery.i18n.prop('deficienciesListPrintFormView.imagesTE');
    	$scope.poweredByConspectorTE = jQuery.i18n.prop('deficienciesListPrintFormView.poweredByConspectorTE');
-
+	$scope.dueDateInTE = jQuery.i18n.prop('deficienciesListView.dueDateInTE');
+	
 	$scope.bShowNoDataMessage = true;
 	$scope.oListTable = customSrv.oDeficiencyEntity.oCurrentListTable;
 

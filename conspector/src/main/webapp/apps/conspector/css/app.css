@@ -206,6 +206,9 @@ a:hover {
 	width: 9.5em;
 }
 #deficienciesListTable th:nth-of-type(8) {
+	width: 9em;
+}
+#deficienciesListTable th:nth-of-type(9) {
 	width: 8em;
 }
 
@@ -452,6 +455,11 @@ a:hover {
 }
 
 #deficienciesListPrintFormTable th:nth-of-type(6) {
+	width: 9%;
+}
+
+
+#deficienciesListPrintFormTable th:nth-of-type(7) {
 	width: 24.5%;
 }
 

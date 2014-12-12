@@ -104,6 +104,7 @@
 	
  	<script src="apps/conspector/js/viewControllers/clientFormController.js"></script>						
 	<script src="apps/conspector/js/viewControllers/appController.js"></script>		
+		
 </head>
 
 <body id="body" style="height:98%;" ng-controller="mainController" ng-click="$root.hideGallery()">

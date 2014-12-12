@@ -22,6 +22,8 @@ viewControllers.controller('deficienciesListView', function($scope, $sce, $modal
 	$scope.totalTE = jQuery.i18n.prop('deficienciesListView.totalTE');
 	$scope.unitTE = jQuery.i18n.prop('deficienciesListView.unitTE');
 	$scope.viewTitleTE = jQuery.i18n.prop('deficienciesListView.viewTitleTE');
+	
+	$scope.dueDateInTE = jQuery.i18n.prop('deficienciesListView.dueDateInTE');
 
 
 	$scope.oTableData = {};
@@ -160,6 +162,15 @@ viewControllers.controller('deficienciesListView', function($scope, $sce, $modal
 				oTableItem._durationNumber = Math.ceil(timeDiff / (1000 * 3600 * 24)) - 1;
 				oTableItem._duration = oTableItem._durationNumber + "d";
 			}
+			
+			if (aData[i].dueDate) {
+				var sDate = aData[i].dueDate.substring(6, aData[i].createdDate.length - 2);
+				var dDate = new Date(parseInt(sDate));
+				var dCurrentDate = new Date();
+				var timeDiff = dDate.getTime() - dCurrentDate.getTime();
+				oTableItem._dueDateInNumber = Math.ceil(timeDiff / (1000 * 3600 * 24)) - 1;
+				oTableItem._dueDateIn = oTableItem._dueDateInNumber + "d";
+			}			
 			//Tags
 			oTableItem.labels = $scope.formatTags(aData[i].labels);
 			oTableItem.trHtmlLabels = $sce.trustAsHtml($scope.formatTags(aData[i].labels));

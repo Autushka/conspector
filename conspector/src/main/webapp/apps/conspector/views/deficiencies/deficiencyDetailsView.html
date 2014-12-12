@@ -181,9 +181,18 @@
 						<span class="pxInputLabel cnpVerticalBeforeSpacingX4">{{creationDateTE}}</span> 
 						<label class="pxDisabledFld">{{oDeficiency.createdDateFormated}}</label>				
 					</td>
-				</tr>							
+				
+				</tr>	
+									
 			</table>
 		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="pxInputLabel cnpVerticalBeforeSpacingX4">{{dueDateTE}}</span> 
+			<label ng-hide="!bDeficiencyDisplayMode" class="pxDisabledFld">{{oDeficiency.dueDateFormated}}</label>
+			<quick-datepicker ng-hide="bDeficiencyDisplayMode" ng-model='oDeficiency.dueDate' width="100%"></quick-datepicker>				
+		</td>		
 	</tr>
 </table>
 

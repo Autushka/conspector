@@ -524,7 +524,7 @@ ul {
 	width: 6%;
 }
 #deficienciesListTable th:nth-of-type(2) {
-	width: 9%;
+	width: 8%;
 }
 #deficienciesListTable th:nth-of-type(3) {
 	width: 11%;
@@ -545,7 +545,7 @@ ul {
 	width: 13%;
 }
 #deficienciesListTable th:nth-of-type(9) {
-	width: 8%;
+	width: 7%;
 }
 */
 .pxListTable {
@@ -1654,12 +1654,43 @@ div.login .pxInputTextField:-ms-input-placeholder { /* IE10+ */
 	text-align: left;
 }
 
+.quickdate{
+	width: 100%;
+}
+
+.quickdate-button,  .quickdate-button:hover{
+	height: 3rem;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.850em;
+	color: black;
+	padding-top: 5px;		
+}
+
 .ng-table th.sortable.sort-desc, .ng-table th.sortable.sort-asc{
 	background-color: initial;
 }
 
-@media print {
+
+
+.hidden{
+	display: none;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    
+    .yes-print{
+       display: block !important;
+    }
+}
+
+
+/* @media print {
    thead {display: table-header-group;}
    tr {-webkit-print-color-adjust: exact;}
    
-}
+} */

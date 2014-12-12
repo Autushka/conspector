@@ -53,7 +53,7 @@
 		<td data-title="accountTE" ng-bind-html="deficiency.trHtmlAccountFirstName | highlight:filter.$" sortable="'accountFirstName'" filter="{ 'accountFirstName': 'text' }" ></td>	
 
 		<td data-title="durationTE" sortable="'_durationNumber'" filter="{ '_duration': 'text' }" style="text-align: center;">{{deficiency._duration}}</td>			
-
+		<td data-title="dueDateInTE" sortable="'_dueDateInNumber'" filter="{ '_dueDateIn': 'text' }" style="text-align: center;">{{deficiency._dueDateIn}}</td>	
 		<td data-title="imagesTE" sortable="'_attachmentsNumber'" filter="{ '_attachmentsNumber': 'text' }" ><a class="pxLink"	ng-click="showDeficiencyPhotos($event, deficiency)">{{deficiency._attachmentsNumber}}</a></td>			
 
 	</tr>

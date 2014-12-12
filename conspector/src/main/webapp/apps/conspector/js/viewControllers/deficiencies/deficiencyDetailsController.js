@@ -38,6 +38,7 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
     $scope.uploadStatusTE = jQuery.i18n.prop('deficiencyDetailsView.uploadStatusTE');
     $scope.usernameTE = jQuery.i18n.prop('deficiencyDetailsView.usernameTE');
     $scope.viewTitleTE = jQuery.i18n.prop('deficiencyDetailsView.viewTitleTE');
+    $scope.dueDateTE = jQuery.i18n.prop('deficiencyDetailsView.dueDateTE');
 
     //TE used for histoty labels
     $scope.otherAttachmentsNumberTE = "Number of attached PDFs";
@@ -49,7 +50,7 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
     //not used right now
     // $scope.durationTE = jQuery.i18n.prop('deficienciesView.durationTE');
     // $scope.dateTE = jQuery.i18n.prop('deficienciesView.dateTE');
-    // $scope.dueDateTE = jQuery.i18n.prop('deficienciesView.dueDateTE');
+   
     // $scope.authorTE = jQuery.i18n.prop('deficienciesView.authorTE');
     // $scope.assigneeTE = jQuery.i18n.prop('deficienciesView.assigneeTE');
 
@@ -171,6 +172,8 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
 
     var setLocalDeficiency = function() {
         $scope.oDeficiency = jQuery.extend(true, {}, customSrv.oDeficiencyEntity.oCurrentDeficiency);
+        
+
 
         if ($scope.globalData.userRole === "endUser") {
             $scope.getUnitsByUser();
@@ -434,6 +437,13 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
 
     var formatDeficiencyData = function() {
         $scope.oDeficiency.createdDateFormated = customSrv.formatDBDate($scope.oDeficiency.createdDate);
+        $scope.oDeficiency.dueDateFormated = customSrv.formatDBDate($scope.oDeficiency.dueDate);
+        
+        if($scope.oDeficiency.dueDate){
+        	$scope.oDeficiency.dueDate = new Date(parseInt($scope.oDeficiency.dueDate.substring(6, $scope.oDeficiency.dueDate.length-2)));
+        }
+        
+        
         $scope.oDeficiency.aTags = customSrv.tagsStringToTagsArray($scope.oDeficiency.labels);
         $scope.oDeficiency.aLocations = customSrv.tagsStringToTagsArray($scope.oDeficiency.environment);
     };
@@ -569,8 +579,10 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
             oDeficiencyForSave.priorityId = $scope.oDeficiency.priorityId;
         }
 
-        oDeficiencyForSave.description = $scope.oDeficiency.description.replace(/(\r\n|\n|\r)/gm, " ");//removing empty lines that case issues with parse json for the history
-
+        if($scope.oDeficiency.description){
+            oDeficiencyForSave.description = $scope.oDeficiency.description.replace(/(\r\n|\n|\r)/gm, " ");//removing empty lines that case issues with parse json for the history
+        }
+        
         oDeficiencyForSave.createdDate = $scope.oDeficiency.createdDate;
         $scope.oDeficiency.labels = customSrv.tagsArrayToTagsString($scope.oDeficiency.aTags);
         oDeficiencyForSave.labels = customSrv.tagsArrayToTagsString($scope.oDeficiency.aTags);
@@ -609,6 +621,10 @@ viewControllers.controller('deficiencyDetailsView', function($scope, $rootScope,
 
         oDeficiencyForSave.createdBy = $scope.oDeficiency.createdBy;
         oDeficiencyForSave.isDeleted = false;
+        
+        if($scope.oDeficiency.dueDate){
+            oDeficiencyForSave.dueDate = "/Date(" + $scope.oDeficiency.dueDate.getTime() + ")/";	
+        }
 
         return oDeficiencyForSave;
     };
